@@ -26,8 +26,8 @@
     <section class="card hero">
       <div class="hero-left">
         <h1>Start: 89.7 kg</h1>
-        <p class="muted">Cel: brzuch w dol + lepsza kondycja. Regularnosc > perfekcja.</p>
-        <div class="row gap">
+        <p class="muted">Cel: brzuch w dol + lepsza kondycja. Regularnosc &gt; perfekcja.</p>
+        <div class="row gap wrap">
           <button class="btn" id="todayBtn">Dzisiaj</button>
           <button class="btn ghost" id="statsBtn">Statystyki</button>
           <button class="btn ghost" id="exportBtn">Eksport</button>
@@ -73,9 +73,7 @@
       </div>
     </section>
 
-    <section class="card day" id="dayCard">
-      <!-- Filled by JS -->
-    </section>
+    <section class="card day" id="dayCard"></section>
 
     <section class="card log" id="logCard">
       <h2>Twoj wpis na dzis</h2>
@@ -96,7 +94,7 @@
           <textarea id="notesInput" rows="3" placeholder="np. dzis lekkie zmeczenie, ale ok"></textarea>
         </label>
       </div>
-      <div class="row gap">
+      <div class="row gap wrap">
         <button class="btn" id="saveBtn">Zapisz</button>
         <button class="btn danger ghost" id="resetBtn">Reset danych</button>
       </div>
@@ -106,26 +104,12 @@
     <section class="card stats" id="statsCard" hidden>
       <h2>Statystyki</h2>
       <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-k">Wpisow</div>
-          <div class="stat-v" id="statEntries">0</div>
-        </div>
-        <div class="stat">
-          <div class="stat-k">Treningow</div>
-          <div class="stat-v" id="statDone">0</div>
-        </div>
-        <div class="stat">
-          <div class="stat-k">Waga min</div>
-          <div class="stat-v" id="statMin">-</div>
-        </div>
-        <div class="stat">
-          <div class="stat-k">Waga max</div>
-          <div class="stat-v" id="statMax">-</div>
-        </div>
+        <div class="stat"><div class="stat-k">Wpisow</div><div class="stat-v" id="statEntries">0</div></div>
+        <div class="stat"><div class="stat-k">Treningow</div><div class="stat-v" id="statDone">0</div></div>
+        <div class="stat"><div class="stat-k">Waga min</div><div class="stat-v" id="statMin">-</div></div>
+        <div class="stat"><div class="stat-k">Waga max</div><div class="stat-v" id="statMax">-</div></div>
       </div>
-      <div class="chart">
-        <canvas id="weightChart" width="800" height="260"></canvas>
-      </div>
+      <div class="chart"><canvas id="weightChart" width="800" height="260"></canvas></div>
       <p class="muted small">Wykres dziala bez bibliotek (czysty canvas).</p>
     </section>
 

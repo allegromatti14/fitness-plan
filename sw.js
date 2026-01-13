@@ -1,5 +1,5 @@
 
-const CACHE = "fitness-plan-v1";
+const CACHE = "fitness-plan-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -22,15 +22,6 @@ self.addEventListener("activate", (e)=>{
 
 self.addEventListener("fetch", (e)=>{
   e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request).then(net=>{
-      // update cache for same-origin GET
-      try{
-        if(e.request.method === "GET" && new URL(e.request.url).origin === location.origin){
-          const copy = net.clone();
-          caches.open(CACHE).then(c=>c.put(e.request, copy));
-        }
-      }catch{}
-      return net;
-    }).catch(()=> caches.match("./index.html")))
+    caches.match(e.request).then(res => res || fetch(e.request).catch(()=>caches.match("./index.html")))
   );
 });

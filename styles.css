@@ -216,3 +216,19 @@ body{
 canvas{width:100%;height:auto;display:block}
 
 .footer{opacity:.75;font-size:12px;text-align:center}
+
+/* Illustrations */
+.illu{
+  margin-top:10px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.12);
+  overflow:hidden;
+}
+.illu svg{display:block;width:100%;height:auto}
+.illu-cap{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 12px;border-top:1px solid rgba(255,255,255,.10);
+  color: rgba(234,240,255,.78);
+  font-size:12px;
+}

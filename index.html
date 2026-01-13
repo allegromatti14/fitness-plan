@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#7c3aed" />
+  <title>Plan 15-20 min (7:00)</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">7:00</div>
+      <div>
+        <div class="title">Plan 15-20 min</div>
+        <div class="subtitle">1 dzien = 1 ekran • pompki klasyczne</div>
+      </div>
+    </div>
+    <button id="installBtn" class="btn ghost" hidden>Zainstaluj</button>
+  </header>
+
+  <main class="container">
+    <section class="card hero">
+      <div class="hero-left">
+        <h1>Start: 89.7 kg</h1>
+        <p class="muted">Cel: brzuch w dol + lepsza kondycja. Regularnosc > perfekcja.</p>
+        <div class="row gap">
+          <button class="btn" id="todayBtn">Dzisiaj</button>
+          <button class="btn ghost" id="statsBtn">Statystyki</button>
+          <button class="btn ghost" id="exportBtn">Eksport</button>
+          <label class="btn ghost file">
+            Import
+            <input type="file" id="importInput" accept="application/json" />
+          </label>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="streak">
+          <div class="streak-num" id="streakNum">0</div>
+          <div class="streak-label">dni z rzedu</div>
+        </div>
+        <div class="mini">
+          <div class="mini-item">
+            <div class="mini-k">Waga dzis</div>
+            <div class="mini-v" id="weightToday">-</div>
+          </div>
+          <div class="mini-item">
+            <div class="mini-k">Ostatni trening</div>
+            <div class="mini-v" id="lastDone">-</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card nav">
+      <div class="row between wrap">
+        <div class="row gap wrap">
+          <button class="chip" data-day="1">Pon</button>
+          <button class="chip" data-day="2">Wto</button>
+          <button class="chip" data-day="3">Sro</button>
+          <button class="chip" data-day="4">Czw</button>
+          <button class="chip" data-day="5">Pia</button>
+          <button class="chip" data-day="6">Sob</button>
+          <button class="chip" data-day="7">Nie</button>
+        </div>
+        <div class="row gap">
+          <button class="btn ghost" id="prevBtn">◀</button>
+          <button class="btn ghost" id="nextBtn">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card day" id="dayCard">
+      <!-- Filled by JS -->
+    </section>
+
+    <section class="card log" id="logCard">
+      <h2>Twoj wpis na dzis</h2>
+      <div class="grid">
+        <label class="field">
+          <span>Waga (kg)</span>
+          <input id="weightInput" inputmode="decimal" placeholder="np. 89.7" />
+        </label>
+        <label class="field">
+          <span>Trening zrobiony</span>
+          <div class="toggle">
+            <input type="checkbox" id="doneInput" />
+            <span class="slider"></span>
+          </div>
+        </label>
+        <label class="field full">
+          <span>Uwagi</span>
+          <textarea id="notesInput" rows="3" placeholder="np. dzis lekkie zmeczenie, ale ok"></textarea>
+        </label>
+      </div>
+      <div class="row gap">
+        <button class="btn" id="saveBtn">Zapisz</button>
+        <button class="btn danger ghost" id="resetBtn">Reset danych</button>
+      </div>
+      <p class="muted small">Dane zapisuja sie lokalnie w przegladarce (localStorage). Dziala offline po instalacji.</p>
+    </section>
+
+    <section class="card stats" id="statsCard" hidden>
+      <h2>Statystyki</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-k">Wpisow</div>
+          <div class="stat-v" id="statEntries">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-k">Treningow</div>
+          <div class="stat-v" id="statDone">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-k">Waga min</div>
+          <div class="stat-v" id="statMin">-</div>
+        </div>
+        <div class="stat">
+          <div class="stat-k">Waga max</div>
+          <div class="stat-v" id="statMax">-</div>
+        </div>
+      </div>
+      <div class="chart">
+        <canvas id="weightChart" width="800" height="260"></canvas>
+      </div>
+      <p class="muted small">Wykres dziala bez bibliotek (czysty canvas).</p>
+    </section>
+
+    <footer class="footer">
+      <span>GitHub Pages ready • wrzuc na repozytorium (np. allegromatti14/fitness-plan)</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

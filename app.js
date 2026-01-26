@@ -1,36 +1,91 @@
 (function(){
 const DAYS=[
-  day(1,"Poniedzialek","Nogi + brzuch",[
-    ex("Przysiady","3 x 15","images/przysiady.png",["Stopy na szerokosc barkow","Plecy proste","Biodra w dol","Oddychaj spokojnie"]),
-    ex("Sklony w przod","3 x 10","images/sklony.png",["Nogi proste","Reka do kolan lub lydek","Bez szarpania"]),
-    ex("Brzuszki","3 x 12","images/brzuszki.png",["Nogi ugiete","Dlonie przy skroniach","Nie ciagnij glowy"]),
-    ex("Plank (deska)","3 x 25 s","images/plank.png",["Oparcie na przedramionach","Brzuch napiety","Cialo w jednej linii","Oddychaj"]),
-  ]),
-  day(2,"Wtorek","Gora + brzuch",[
-    ex("Pompki klasyczne","3 x 8-12","images/pompki.png",["Rece pod barkami","Cialo sztywne","Schodz klatka do ziemi","Bez wyginania plecow"]),
-    ex("Unoszenie rak w bok","3 x 15","images/unoszenie.png",["Stoisz prosto","Rece bokiem do wysokosci barkow","Powoli w gore i w dol","Nie machaj"]),
-    ex("Brzuszki skosne","3 x 12","images/skosne.png",["Skret tulowia","Lokiec do przeciwnego kolana","Spokojny rytm"]),
-    ex("Plank (deska)","3 x 30 s","images/plank.png",["Brzuch napiety","Cialo w jednej linii","Oddychaj"]),
-  ]),
-  day(3,"Sroda","Spalanie + brzuch",[
-    ex("Pajacyki","3 x 40 s","images/pajacyki.png",["Rowny rytm","Oddychaj","Nie skacz za wysoko"]),
-    ex("Przysiady","3 x 12","images/przysiady.png",["Plecy proste","Biodra w dol"]),
-    ex("Mountain climbers","3 x 25 s","images/climbers.png",["Pozycja jak do pompki","Kolana na zmiane do klatki","Nie bujaj biodrami"]),
-    ex("Brzuszki","3 x 15","images/brzuszki.png",["Nogi ugiete","Nie ciagnij glowy"]),
-  ]),
-  day(4,"Czwartek","Powtorka poniedzialku",[],1),
-  day(5,"Piatek","Powtorka wtorku",[],2),
-  day(6,"Sobota","Lekki dzien",[
-    ex("Marsz w miejscu","5 min","images/marsz.png",["Kolana lekko wyzej","Lekki oddech"]),
-    ex("Sklony","3 x 12","images/sklony.png",["Bez szarpania","Powoli"]),
-    ex("Plank (deska)","3 x 30 s","images/plank.png",["Brzuch napiety","Oddychaj"]),
-    ex("Rozciaganie","5 min","images/stretch.png",["Barki, uda, lydki","Bez bolu"]),
-  ]),
-  day(7,"Niedziela","Reset",[
-    ex("Spacer","15-20 min","images/spacer.png",["15-20 min","Spokojne tempo","Najwazniejsze: wyjsc"]),
-  ]),
+  day(1,"Poniedzialek","Brzuch / core",{
+    "15":[
+      ex("Plank (deska)","3 x 30 s","images/plank.png",["Brzuch napiety","Cialo w jednej linii","Oddychaj spokojnie"]),
+      ex("Brzuszki","3 x 15","images/brzuszki.png",["Nogi ugiete","Dlonie przy skroniach","Nie ciagnij glowy"]),
+      ex("Unoszenie nog lezac","3 x 12","images/legraise.png",["Dol plecow przyklejony","Ruch powoli","Bez machania"]),
+    ],
+    "30":[
+      ex("Kolko treningowe (ab wheel)","4 x 10","images/abwheel.png",["Kolana na macie","Brzuch napiety","Krotki zasieg na start","Nie wyginaj ledzwi"]),
+      ex("Unoszenie nog lezac","4 x 15","images/legraise.png",["Dol plecow przyklejony","Powoli w gore i w dol"]),
+      ex("Plank (deska)","4 x 45 s","images/plank.png",["Brzuch + posladki napiete","Cialo w jednej linii","Oddychaj"]),
+      ex("Brzuszki","3 x 20","images/brzuszki.png",["Kontrola ruchu","Nie ciagnij glowy"]),
+    ]
+  }),
+  day(2,"Wtorek","Brzuch + gora",{
+    "15":[
+      ex("Pompki klasyczne","3 x 10","images/pompki.png",["Rece pod barkami","Cialo sztywne","Kontrola w dol"]),
+      ex("Russian twist (hantel)","3 x 16","images/russian.png",["Lekko odchyl sie","Krec tulowiem","Nie tylko rekami"]),
+      ex("Plank bokiem","2 x 30 s / strona","images/sideplank.png",["Biodra wysoko","Cialo w linii","Oddychaj"]),
+    ],
+    "30":[
+      ex("Pompki klasyczne","4 x 15","images/pompki.png",["Rece pod barkami","Cialo sztywne","Pelny ruch"]),
+      ex("Russian twist (hantel)","4 x 20","images/russian.png",["Kontrola","Bez szarpania"]),
+      ex("Plank bokiem","3 x 30 s / strona","images/sideplank.png",["Biodra wysoko","Nie skrecaj miednicy"]),
+      ex("Mountain climbers","3 x 40 s","images/climbers.png",["Pozycja jak do pompki","Kolana na zmiane","Nie bujaj biodrami"]),
+    ]
+  }),
+  day(3,"Sroda","Core HARD",{
+    "15":[
+      ex("Hollow body hold","3 x 20 s","images/hollow.png",["Unies ramiona i nogi","Nie odrywaj ledzwi","Oddychaj"]),
+      ex("Brzuszki skosne","3 x 12","images/skosne.png",["Lokiec do przeciwnego kolana","Spokojny rytm"]),
+      ex("Plank (deska)","2 x 45 s","images/plank.png",["Brzuch napiety","Cialo w jednej linii"]),
+    ],
+    "30":[
+      ex("Kolko treningowe (ab wheel)","5 x 8","images/abwheel.png",["Kontrola ruchu","Nie wyginaj ledzwi"]),
+      ex("Hollow body hold","4 x 30 s","images/hollow.png",["Brzuch twardy","Oddychaj"]),
+      ex("Brzuszki skosne","4 x 16","images/skosne.png",["Kontrola","Bez szarpania"]),
+      ex("Plank (deska)","3 x 60 s","images/plank.png",["Brzuch + posladki napiete","Oddychaj"]),
+    ]
+  }),
+  day(4,"Czwartek","Brzuch + cardio",{
+    "15":[
+      ex("Pajacyki","3 x 30 s","images/pajacyki.png",["Rowny rytm","Oddychaj"]),
+      ex("Mountain climbers","3 x 30 s","images/climbers.png",["Nie bujaj biodrami","Tempo rowne"]),
+      ex("Plank (deska)","2 x 45 s","images/plank.png",["Brzuch napiety","Cialo w linii"]),
+    ],
+    "30":[
+      ex("Pajacyki","5 x 40 s","images/pajacyki.png",["Rowny rytm","Oddychaj"]),
+      ex("Mountain climbers","4 x 40 s","images/climbers.png",["Pozycja jak do pompki","Kolana na zmiane"]),
+      ex("Unoszenie nog lezac","4 x 15","images/legraise.png",["Dol plecow przyklejony","Ruch powoli"]),
+      ex("Plank (deska)","3 x 45 s","images/plank.png",["Brzuch napiety","Oddychaj"]),
+    ]
+  }),
+  day(5,"Piatek","Sila brzucha",{
+    "15":[
+      ex("Brzuszki","3 x 20","images/brzuszki.png",["Kontrola ruchu","Nie ciagnij glowy"]),
+      ex("Russian twist (hantel)","3 x 16","images/russian.png",["Krec tulowiem","Kontrola"]),
+      ex("Hollow body hold","2 x 30 s","images/hollow.png",["Brzuch twardy","Oddychaj"]),
+    ],
+    "30":[
+      ex("Kolko treningowe (ab wheel)","6 x 6","images/abwheel.png",["Krotki zasieg","Kontrola"]),
+      ex("Russian twist (ciezej)","4 x 20","images/russian.png",["Kontrola","Bez szarpania"]),
+      ex("Hollow body hold","3 x 45 s","images/hollow.png",["Brzuch twardy","Oddychaj"]),
+      ex("Brzuszki","3 x 25","images/brzuszki.png",["Kontrola","Nie ciagnij glowy"]),
+    ]
+  }),
+  day(6,"Sobota","Obwod HARD",{
+    "15":[
+      ex("Obwod x3","Pompki 10 • Brzuszki 15 • Plank 30 s","images/pompki.png",["3 rundy","Minimalne przerwy","Technika > tempo"]),
+    ],
+    "30":[
+      ex("Obwod x4","Pompki 15 • Brzuszki 20 • Plank 40 s • Climbers 30 s","images/climbers.png",["4 rundy","Minimalne przerwy","Oddychaj"]),
+    ]
+  }),
+  day(7,"Niedziela","Core finish",{
+    "15":[
+      ex("Plank (deska)","3 x 45 s","images/plank.png",["Brzuch napiety","Oddychaj"]),
+      ex("Hollow body hold","3 x 20 s","images/hollow.png",["Nie odrywaj ledzwi","Oddychaj"]),
+    ],
+    "30":[
+      ex("Plank (deska)","5 x 60 s","images/plank.png",["Brzuch + posladki napiete","Oddychaj"]),
+      ex("Hollow body hold","4 x 30 s","images/hollow.png",["Brzuch twardy","Oddychaj"]),
+      ex("Kolko treningowe (ab wheel)","4 x 10","images/abwheel.png",["Kontrola","Krotki zasieg na start"]),
+    ]
+  }),
 ];
-function day(id,name,focus,items,repeatOf){return{id,name,focus,items,repeatOf:repeatOf||null};}
+function day(id,name,focus,itemsByMode){return{id,name,focus,itemsByMode};}
 function ex(name,volume,img,how){return{name,volume,img,how};}
 
 const els={
@@ -51,6 +106,8 @@ const els={
   lastDone:document.getElementById("lastDone"),
   installBtn:document.getElementById("installBtn"),
   statsBtn:document.getElementById("statsBtn"),
+  mode15Btn:document.getElementById("mode15Btn"),
+  mode30Btn:document.getElementById("mode30Btn"),
   statsCard:document.getElementById("statsCard"),
   logCard:document.getElementById("logCard"),
   statEntries:document.getElementById("statEntries"),
@@ -59,7 +116,7 @@ const els={
   statMax:document.getElementById("statMax"),
   chart:document.getElementById("weightChart"),
 };
-const STORAGE_KEY="fitness_plan_v3_images";
+const STORAGE_KEY="fitness_plan_v4_15_30_mode";
 let state=loadState();
 let currentDayId=computeTodayDayId();
 wireUI();
@@ -72,6 +129,18 @@ function wireUI(){
   els.prevBtn.addEventListener("click",()=>renderDay(prevDayId(currentDayId)));
   els.nextBtn.addEventListener("click",()=>renderDay(nextDayId(currentDayId)));
   els.todayBtn.addEventListener("click",()=>renderDay(computeTodayDayId()));
+
+  // mode toggle: 15 min vs 30 min (B)
+  function setMode(m){
+    state.mode=String(m);
+    saveState();
+    els.mode15Btn.classList.toggle("active",state.mode==="15");
+    els.mode30Btn.classList.toggle("active",state.mode==="30");
+    renderDay(currentDayId);
+  }
+  if(els.mode15Btn) els.mode15Btn.addEventListener("click",()=>setMode("15"));
+  if(els.mode30Btn) els.mode30Btn.addEventListener("click",()=>setMode("30"));
+
 
   els.saveBtn.addEventListener("click",saveToday);
   els.resetBtn.addEventListener("click",()=>{
@@ -139,25 +208,38 @@ function renderDay(id){
   const d=getDay(id);
   els.chips.forEach(c=>c.classList.toggle("active",Number(c.dataset.day)===id));
 
+  // mode buttons state
+  if(els.mode15Btn) els.mode15Btn.classList.toggle("active",state.mode==="15");
+  if(els.mode30Btn) els.mode30Btn.classList.toggle("active",state.mode==="30");
+
   const entry=state.entries[isoToday()]||{};
   els.weightInput.value=entry.weight??"";
   els.doneInput.checked=!!entry.done;
   els.notesInput.value=entry.notes??"";
 
+  const mode = state.mode==="30" ? "30" : "15";
+  const timeLabel = mode==="30" ? "30 min (HARDCORE B)" : "15 min";
+  const warmupTime = mode==="30" ? "5 min" : "3 min";
+  const warmupText = mode==="30"
+    ? "Marsz 2 min • Krazenia ramion 1 min • Krazenia bioder 1 min • Lekki plank 1 min"
+    : "Marsz 1 min • Krazenia ramion 30 s • Krazenia bioder 30 s • Sklony boczne 1 min";
+
   const warmup=`
     <div class="item">
-      <div class="item-top"><h3>Rozgrzewka</h3><span class="pill good">3 min</span></div>
-      <p>Marsz 1 min • Krazenia ramion 30 s • Krazenia bioder 30 s • Sklony boczne 1 min</p>
+      <div class="item-top"><h3>Rozgrzewka</h3><span class="pill good">${warmupTime}</span></div>
+      <p>${warmupText}</p>
     </div>`;
 
-  const items=(d.items.length?d.items:getDay(d.repeatOf).items).map((it,i)=>itemBlock(it,i+1)).join("");
-  const badge=d.repeatOf?`<div class="badge"><span class="dot"></span>Powtorka dnia ${d.repeatOf}</div>`:`<div class="badge"><span class="dot"></span>Plan dnia</div>`;
+  const items=(d.itemsByMode[mode]||[]).map((it,i)=>itemBlock(it,i+1)).join("");
+  const badge = mode==="30"
+    ? `<div class="badge"><span class="dot"></span>Tryb: 30 MIN (B)</div>`
+    : `<div class="badge"><span class="dot"></span>Tryb: 15 MIN</div>`;
 
   els.dayCard.innerHTML=`
     <div class="row between wrap gap">
       <div>
         <h2>${esc(d.name)} • ${esc(d.focus)}</h2>
-        <div class="muted small">Godzina: 7:00 • Czas: 15-20 min</div>
+        <div class="muted small">Godzina: 7:00 • Czas: ${timeLabel}</div>
       </div>
       ${badge}
     </div>
@@ -200,7 +282,7 @@ function parseWeight(v){
   const num=Number(String(v).replace(",",".").trim());
   return Number.isFinite(num)?num:null;
 }
-function defaultState(){ return {version:3,createdAt:new Date().toISOString(),entries:{}}; }
+function defaultState(){ return {version:4,createdAt:new Date().toISOString(),mode:"15",entries:{}}; }
 function loadState(){
   try{
     const raw=localStorage.getItem(STORAGE_KEY);

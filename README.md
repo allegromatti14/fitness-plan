@@ -1,4 +1,4 @@
-# Plan 15-20 min (7:00) - v3 (PNG)
+# Plan 15 min + HARDCORE 30 (B) (7:00) - v4 (PNG)
 
 Ta wersja ma prawdziwe pliki obrazkow w /images i wyswietla je w aplikacji i na stronie.
 

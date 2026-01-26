@@ -199,3 +199,6 @@ canvas{width:100%;height:auto;display:block}
   color: rgba(234,240,255,.78);
   font-size:12px;
 }
+
+.chip.mode{font-weight:900}
+.chip.mode.active{box-shadow:0 0 0 2px rgba(124,58,237,.55) inset}
